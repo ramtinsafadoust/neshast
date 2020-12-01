@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".MainActivity">
@@ -14,14 +15,19 @@
         android:layout_margin="12dp"
         android:hint="نام اتاق را وارد کنید" />
 
-    <Button
+
+
+    <com.royrodriguez.transitionbutton.TransitionButton
+        android:id="@+id/transition_button"
         android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:layout_margin="12dp"
-        android:background="#000080"
-        android:onClick="onButtonClick"
+        android:layout_height="wrap_content"
         android:text="پیوستن"
-        android:textColor="#FFFFFF" />
+
+    app:defaultColor="@color/colorAccent"
+    app:loaderColor="@android:color/white"
+    android:textColor="@android:color/white" />
+
+
 
 
 </LinearLayout>
