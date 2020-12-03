@@ -1,12 +1,13 @@
 package com.oracto.jitsi;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.royrodriguez.transitionbutton.TransitionButton;
 
@@ -20,12 +21,16 @@ public class MainActivity extends AppCompatActivity {
 
     private TransitionButton transitionButton;
 
+    Button nextpg;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         transitionButton = findViewById(R.id.transition_button);
+
+        nextpg=findViewById(R.id.nextpg);
 
 
         try {
@@ -58,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
                                 public void onAnimationStopEnd() {
 
                                     try {
+
+
                                         startmtn();
                                     } catch (MalformedURLException e) {
                                         e.printStackTrace();
@@ -105,6 +112,10 @@ public class MainActivity extends AppCompatActivity {
             JitsiMeetActivity.launch(this, options);
         }
 
+
+
+
+
     }
 
     @Override
@@ -112,5 +123,10 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
 
      
+    }
+
+    public void myClickHandler(View view) {
+        Intent intent=new  Intent(MainActivity.this,Test.class);
+        startActivity(intent);
     }
 }
